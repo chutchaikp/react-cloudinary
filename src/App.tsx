@@ -7,10 +7,10 @@ const App = () => {
     <Flex justify="center" p="2rem" minH="100vh" >
       <Flex direction="column" >
         <Heading>Image gallery</Heading>
-
+        {/* 
         [
         <span>{process.env.REACT_APP_CLOUD_NAME}</span>
-        ]
+        ] */}
 
         <PhotoUploader />
       </Flex>
