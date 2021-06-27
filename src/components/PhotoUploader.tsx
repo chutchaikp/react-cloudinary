@@ -4,11 +4,6 @@ import request from 'superagent';
 import { BiImageAdd } from "react-icons/bi";
 import UploadStatus from './PhotoUploaderStatus'
 
-// interface UploadImageProps {
-// 	onProgress: (fileName: string, progress: number) => void,
-// 	onUploaded: (fileName: string, response: any) => void,
-// }
-
 const PhotoUploader = () => {
 
 	const [uploadedPhotos, setUploadedPhotos] = useState<any>([])
@@ -88,7 +83,11 @@ const PhotoUploader = () => {
 
 			</label>
 			<input id="file-upload" type="file" accept="image/*" onChange={(e) => {
-				upload(e.target.files)
+				if (uploadedPhotos.length < 5) {
+					upload(e.target.files)
+				} else {
+					console.log('Maximum upload files');
+				}
 			}
 			} style={{ display: 'none', }} />
 
